@@ -1,3 +1,4 @@
 EXPECTED_OUTPUT
 *.a
 program
+__pycache__

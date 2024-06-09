@@ -1,12 +1,5 @@
-import sys
-
-CONFIG_FILE_NAME = "config"
-CODE_FILE_NAME = "multiples5.a"
-OUTPUT_FILE_NAME = "program"
-HEADER = "v2.0 raw"
-
 class Assembler:
-    def __init__(self, cfg_file:str, code_file:str, op_file="program", header="v2.0 raw"):
+    def __init__(self, code_file:str, cfg_file="config", op_file="program", header="v2.0 raw"):
         self.cfg = cfg_file
         self.code = code_file
         self.op= op_file
@@ -96,7 +89,3 @@ class Assembler:
         compiled_string = " ".join(complied_list)
         with open(self.op, "w") as f:
             f.writelines([self.header, "\n" , compiled_string])
-        
-
-a = Assembler(cfg_file=CONFIG_FILE_NAME, code_file=CODE_FILE_NAME, op_file=OUTPUT_FILE_NAME, header=HEADER)
-a.compile()
